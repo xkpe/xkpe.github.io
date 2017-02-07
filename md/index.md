@@ -7,6 +7,12 @@
 - treee
 
 
+```cpp
+int main() {
+  return 0;
+}
+```
+
 ```flow
 st=>start: Start
 op=>operation: Your Operation
