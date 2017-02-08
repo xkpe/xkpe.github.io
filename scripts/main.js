@@ -1,20 +1,21 @@
-require(['highlight'], function (highlight) {
-  requirejs(['lib/marked'], function (marked){
-    // Synchronous highlighting with highlight.js
-    marked.setOptions({
-      highlight: function (code) {
-        return highlight.highlightAuto(code).value;
-      }
-    });
+require([ 'eve', 'raphael', 'flowchart-latest', 'lib/marked', 'highlight' ], function ($, $, flow, marked, highlight)
+{
 
-    var client = new XMLHttpRequest();
-    client.open('GET', '../md/index.md');
-    client.onreadystatechange = function() {
-      document.getElementById('content').innerHTML =
-        marked(client.responseText);
+
+  // Synchronous highlighting with highlight.js
+  marked.setOptions({
+    highlight: function (code) {
+      return highlight.highlightAuto(code).value;
     }
-    client.send();
-
   });
+
+  var client = new XMLHttpRequest();
+  client.open('GET', '../md/index.md');
+  client.onreadystatechange = function() {
+    document.getElementById('content').innerHTML =
+      marked(client.responseText);
+  }
+  client.send();
+
 });
 
