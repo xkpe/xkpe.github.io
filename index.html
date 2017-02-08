@@ -3,29 +3,10 @@
 <head>
   <meta charset="utf-8"/>
   <title>Marked in the browser</title>
-  <script data-main="scripts/main" src="require.js"></script>
+  <script data-main="scripts/main" src="scripts/require.js"></script>
 
 </head>
 <body>
   <div id="content"></div>
-  <script>
-
-  require(['lib/marked.js']);
-  
-  // Synchronous highlighting with highlight.js
-  marked.setOptions({
-    highlight: function (code) {
-    return require('highlight.js').highlightAuto(code).value;
-    }
-  });
-
-  var client = new XMLHttpRequest();
-  client.open('GET', './md/index.md');
-  client.onreadystatechange = function() {
-    document.getElementById('content').innerHTML =
-      marked(client.responseText);
-  }
-  client.send();
-  </script>
 </body>
 </html>
