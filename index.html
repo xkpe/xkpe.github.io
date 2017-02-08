@@ -10,14 +10,14 @@
   <div id="content"></div>
   <script>
 
-require('lib/marked.js', function(){
+  require('lib/marked.js');
+  
   // Synchronous highlighting with highlight.js
   marked.setOptions({
     highlight: function (code) {
     return require('highlight.js').highlightAuto(code).value;
     }
   });
-});
 
   var client = new XMLHttpRequest();
   client.open('GET', './md/index.md');
