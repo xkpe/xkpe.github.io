@@ -1,4 +1,4 @@
-require([ 'eve', 'raphael', 'flowchart-latest', 'lib/marked', 'highlight' ], function ($, $, flow, marked, highlight)
+require([ 'eve', 'Raphael', 'flowchart-latest', 'lib/marked', 'highlight' ], function ($, $, flow, marked, highlight)
 {
 
 
